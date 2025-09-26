@@ -8,18 +8,16 @@ def process_grades(students):
     for student in students:
         name = student['name']
         grades = student['grades']
-        print(grades)
         
-        if grades == []:  
+        if grades == None:  
             print(f"Student {name} has no grades")
             continue
         
         average = sum(grades) / len(grades)
-        print(f"avg: {average}")
         total_grades += average
-        counter += 1
+        # counter += 1
 
-        if average >= 70:  
+        if average > 70:  
             passed.append(name)
         elif average >= 50:
             print(f"{name} is in recovery")
@@ -40,7 +38,7 @@ if __name__ == "__main__":
     students = [
         {'name': 'Ana', 'grades': [80, 90, 85]},
         {'name': 'Luis', 'grades': [70, 70, 70]},
-        {'name': 'Jorge', 'grades': []},
+        {'name': 'Jorge', 'grades': None},
         {'name': 'Marta', 'grades': [40, 45, 50]}
     ]
 
